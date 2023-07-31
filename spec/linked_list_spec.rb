@@ -68,5 +68,12 @@ describe LinkedList do
 	  @linked_list.prepend("findme")
 		expect(@linked_list.includes?("findme")).to eq(true)
   end
-	it 'pops the last node off the list'
+	
+	it 'pops the last node off the list' do
+		@linked_list.append("keepme")
+		@linked_list.append("popme")
+		popped = @linked_list.pop
+		expect(popped.data).to eq("popme")
+	  expect(@linked_list.count).to eq(2)
+	end
 end

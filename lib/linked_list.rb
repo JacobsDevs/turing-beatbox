@@ -82,4 +82,15 @@ class LinkedList
 		return false
 	end
 
+	def pop
+    current_node = @head
+	  previous_node = @head
+		(count - 1).times do
+			previous_node = current_node
+			current_node = current_node.next_node
+		end
+    previous_node.next_node = nil
+		@tail = previous_node
+		return current_node
+	end
 end
