@@ -28,7 +28,7 @@ describe LinkedList do
 	end
 	
 	it 'generates a string containing node data' do
-    expect(@linked_list.string).to eq("doop")
+    expect(@linked_list.to_string).to eq("doop")
 	end
   
 	it 'append additional nodes' do
@@ -44,6 +44,17 @@ describe LinkedList do
 
 	it 'generates a string containing all nodes data' do
 	  @linked_list.append("boop")
-	  expect(@linked_list.string).to eq("doop boop")
+	  expect(@linked_list.to_string).to eq("doop boop")
+	end
+
+	it 'prepends to the front of the list' do
+    @linked_list.prepend("predoop")
+		expect(@linked_list.to_string).to eq("predoop doop")
+	end
+
+	it 'inserts based on index and data' do
+	  @linked_list.append("lastdoop")
+		@linked_list.insert(1, "middoop")
+		expect(@linked_list.to_string).to eq("doop middoop lastdoop")
 	end
 end

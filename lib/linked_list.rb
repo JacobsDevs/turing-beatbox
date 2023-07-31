@@ -28,7 +28,7 @@ class LinkedList
     counter
 	end
 
-	def string
+	def to_string
 		string = ""
 		current_node = @head
 		count.times do
@@ -36,5 +36,23 @@ class LinkedList
 			current_node = current_node.next_node
 		end
 		string.strip
+	end
+
+	def prepend(data)
+		node = Node.new(data)
+		node.next_node = @head
+		@head = node
+	end
+
+	def insert(index, data)
+		node = Node.new(data)
+		last_node = @head
+		current_node = @head
+		index.times do
+			last_node = current_node
+			current_node = current_node.next_node
+		end
+		last_node.next_node = node
+		node.next_node = current_node
 	end
 end
