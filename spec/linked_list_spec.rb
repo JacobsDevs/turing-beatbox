@@ -57,4 +57,16 @@ describe LinkedList do
 		@linked_list.insert(1, "middoop")
 		expect(@linked_list.to_string).to eq("doop middoop lastdoop")
 	end
+
+	it 'finds nodes' do
+		@linked_list.append("lastdoop")
+		@linked_list.insert(1, "middoop")
+		expect(@linked_list.find(1, 2)).to eq("middoop lastdoop")
+	end
+
+	it 'checks if list includes specific node' do
+	  @linked_list.append("findme")
+		expect(@linked_list.includes?).to eq(true)
+  end
+	it 'pops the last node off the list'
 end

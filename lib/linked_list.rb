@@ -45,14 +45,32 @@ class LinkedList
 	end
 
 	def insert(index, data)
+		#Create Node
 		node = Node.new(data)
+		#Establish traversing variables
 		last_node = @head
 		current_node = @head
+		#Go to position
 		index.times do
 			last_node = current_node
 			current_node = current_node.next_node
 		end
+		#Insert Node
 		last_node.next_node = node
 		node.next_node = current_node
 	end
+
+	def find(start, length)
+	  current_node = @head
+		start.times do
+			current_node = current_node.next_node
+    end
+		string = ""
+		length.times do 
+			string += "#{current_node.data} "
+			current_node = current_node.next_node
+		end
+		string.strip
+	end
+
 end
