@@ -65,8 +65,8 @@ describe LinkedList do
 	end
 
 	it 'checks if list includes specific node' do
-	  @linked_list.append("findme")
-		expect(@linked_list.includes?).to eq(true)
+	  @linked_list.prepend("findme")
+		expect(@linked_list.includes?("findme")).to eq(true)
   end
 	it 'pops the last node off the list'
 end

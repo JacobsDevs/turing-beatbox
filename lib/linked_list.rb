@@ -73,4 +73,13 @@ class LinkedList
 		string.strip
 	end
 
+	def includes?(query)
+	  current_node = @head
+    until current_node.data == query || current_node.next_node == nil
+			current_node = current_node.next_node
+		end
+		return true if current_node.data == query
+		return false
+	end
+
 end
